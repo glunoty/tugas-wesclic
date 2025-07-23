@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Model untuk Kategori Produk
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  products  Product[] // Relasi: Satu Kategori punya BANYAK Produk
+}
+
+// Model untuk Produk
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  price       Float
+
+  // Kunci asing untuk relasi
+  categoryId  Int
+
+  // Relasi: Satu Produk hanya punya SATU Kategori
+  category    Category @relation(fields: [categoryId], references: [id])
+}
