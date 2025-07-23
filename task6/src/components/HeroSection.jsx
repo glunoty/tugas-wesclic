@@ -17,7 +17,7 @@ function HeroSection() {
             AMIKOM Tracer Management Information System.
           </p>
           
-          <div className="mt-8 flex items-center justify-center md:justify-start gap-6">
+          <div className="mt-8 flex flex-col md:flex-row items-center justify-center md:justify-start gap-6">
             <button className="bg-purple-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-purple-700 transition-colors shadow-lg">
               Learn More
             </button>
@@ -29,7 +29,7 @@ function HeroSection() {
 
         {/* Kolom Kanan: Gambar */}
         <div className="flex justify-center">
-          <img src="/hero.svg" alt="Alumni" className="max-w-sm md:max-w-md scale-x-[-1]" />
+          <img src="/hero.svg" alt="Alumni" className="w-full md:max-w-md scale-x-[-1]" />
         </div>
 
       </div>
